@@ -10,6 +10,8 @@ const rootRouter = require('./src/routes/index')
 //inicia o uso do express habilita leitura de json nas requisições
 const app = express()
 app.use(express.json())
+//habilita chegada de form via url com middleware
+app.search(express.urlencoded({extended: true}))
 
 //serve arquivos estaticos
 app.use(express.static(path.join(__dirname, 'public')))
